@@ -21,7 +21,7 @@ export function SectionHeader({ title }) {
   return (
     <Reveal>
       <div style={{ textAlign: "center", marginBottom: 56 }}>
-        <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 40, fontWeight: 700, color: "#1a1a1a" }}>{title}</h2>
+        <h2 style={{ fontFamily: "'Nature', serif", fontSize: 40, fontWeight: 700, color: "#1a1a1a" }}>{title}</h2>
         <div style={{ width: 40, height: 3, background: "#1a1a1a", margin: "12px auto 0" }} />
       </div>
     </Reveal>
@@ -40,9 +40,9 @@ export function CircleSkill({ name, pct, animate }) {
           strokeDasharray={circ} strokeDashoffset={circ - dash}
           strokeLinecap="round" transform="rotate(-90 95 95)"
           style={{ transition: "stroke-dashoffset 1.2s ease" }} />
-        <text x="95" y="100" textAnchor="middle" fontSize="18" fontFamily="'DM Sans', sans-serif" fill="#333">{pct}%</text>
+        <text x="95" y="100" textAnchor="middle" fontSize="18" fontFamily="'Nature', serif" fill="#333">{pct}%</text>
       </svg>
-      <p style={{ fontWeight: 700, fontSize: 18, fontFamily: "'DM Sans', sans-serif", marginTop: 4 }}>{name}</p>
+      <p style={{ fontWeight: 700, fontSize: 18, fontFamily: "'Nature', serif", marginTop: 4 }}>{name}</p>
     </div>
   );
 }
@@ -97,7 +97,7 @@ export function Field({ label, children }) {
 
 export const inputStyle = {
   width: "100%", padding: "10px 12px", border: "1px solid #ddd", borderRadius: 4,
-  fontSize: 14, fontFamily: "'DM Sans', sans-serif", outline: "none",
+  fontSize: 14, fontFamily: "'Nature', serif", outline: "none",
 };
 
 export const btnStyle = (variant = "primary") => ({

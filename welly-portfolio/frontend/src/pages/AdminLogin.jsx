@@ -22,10 +22,10 @@ export default function AdminLogin() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: "#1a1a1a", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'DM Sans', sans-serif" }}>
+    <div style={{ minHeight: "100vh", background: "#1a1a1a", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Nature', serif" }}>
       <div style={{ background: "#fff", padding: 40, borderRadius: 8, width: 360, boxShadow: "0 20px 60px rgba(0,0,0,0.3)" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
-          <span style={{ fontFamily: "'Caveat', cursive", fontSize: 36, fontWeight: 700 }}>Welly</span>
+          <span style={{ fontFamily: "'Nature', serif", fontSize: 36, fontWeight: 700 }}>Welly</span>
           <p style={{ fontSize: 14, color: "#888", marginTop: 4 }}>Admin Dashboard</p>
         </div>
         {error && <div style={{ background: "#fef2f2", border: "1px solid #fee2e2", color: "#991b1b", padding: "10px 14px", borderRadius: 4, marginBottom: 16, fontSize: 13 }}>{error}</div>}

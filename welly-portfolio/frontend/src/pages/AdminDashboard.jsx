@@ -272,8 +272,8 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f5f5f5", minHeight: "100vh" }}>
-      <style>{`button{font-family:'DM Sans',sans-serif}`}</style>
+    <div style={{ fontFamily: "'Nature', serif", background: "#f5f5f5", minHeight: "100vh" }}>
+      <style>{`button{font-family:'Nature', serif}`}</style>
 
       {/* Toast */}
       {toast && (
@@ -285,7 +285,7 @@ export default function AdminDashboard() {
       {/* Sidebar */}
       <div style={{ position: "fixed", left: 0, top: 0, bottom: 0, width: 220, background: "#1a1a1a", color: "#fff", display: "flex", flexDirection: "column", zIndex: 100 }}>
         <div style={{ padding: "28px 24px 20px" }}>
-          <span style={{ fontFamily: "'Caveat', cursive", fontSize: 28, fontWeight: 700 }}>Welly</span>
+          <span style={{ fontFamily: "'Nature', serif", fontSize: 28, fontWeight: 700 }}>Welly</span>
           <p style={{ fontSize: 12, color: "#666", marginTop: 4 }}>Admin Panel</p>
         </div>
         <nav style={{ flex: 1, padding: "0 12px" }}>
@@ -429,7 +429,7 @@ function BlogModal({ data, onSave }) {
   );
 }
 
-// Attach Modal to window scope for GenericModal use
+/* Attach Modal to window scope for GenericModal use */
 function Modal({ title, onClose, children }) {
   return (
     <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", padding: 20, overflowY: "auto" }}>
