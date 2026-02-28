@@ -127,8 +127,8 @@ export default function Home() {
 
       {/* Social sidebar */}
       <div className="social-side">
-        <a className="social-icon" href="https://instagram.com/chandrawelly_" target="_blank" rel="noopener noreferrer">📷</a>
-        <a className="social-icon" href="https://facebook.com/tjhandra" target="_blank" rel="noopener noreferrer">f</a>
+        <a className="social-icon" href="https://www.instagram.com/chndrawelly_?igsh=YnA2aHVvNHY2cTRv" target="_blank" rel="noopener noreferrer">📷</a>
+        <a className="social-icon" href="https://facebook.com/welly.chandra.256" target="_blank" rel="noopener noreferrer">f</a>
         <a className="social-icon" href="https://linkedin.com/in/welly-chandra-mauliate-sitorus-919243316" target="_blank" rel="noopener noreferrer">in</a>
         <span className="follow-v">Follow Me</span>
       </div>
