@@ -63,6 +63,20 @@ app.post("/api/auth/change-password", authMiddleware, (req, res) => {
   res.json({ ok: true });
 });
 
+app.post("/api/auth/reset", (req, res) => {
+  const { username, password } = req.body;
+  if (!username || !password) return res.status(400).json({ error: "Required fields missing" });
+  const existing = db.prepare("SELECT id FROM admin LIMIT 1").get();
+  if (existing) {
+    const hash = bcrypt.hashSync(password, 10);
+    db.prepare("UPDATE admin SET username = ?, password_hash = ? WHERE id = 1").run(username, hash);
+  } else {
+    const hash = bcrypt.hashSync(password, 10);
+    db.prepare("INSERT INTO admin (id, username, password_hash) VALUES (1, ?, ?)").run(username, hash);
+  }
+  res.json({ ok: true, message: "Admin credentials reset successfully" });
+});
+
 // ─── PUBLIC API ───────────────────────────────────────────────────────────────
 app.get("/api/profile", (req, res) => {
   const profile = db.prepare("SELECT * FROM profile WHERE id = 1").get();
