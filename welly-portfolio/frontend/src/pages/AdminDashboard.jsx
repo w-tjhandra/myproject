@@ -273,7 +273,7 @@ export default function AdminDashboard() {
 
   return (
     <div style={{ fontFamily: "'Nature', serif", background: "#f5f5f5", minHeight: "100vh" }}>
-      <style>{`button{font-family:'Nature', serif}`}</style>
+      <style>{`button{font-family:'Gibed', serif}`}</style>
 
       {/* Toast */}
       {toast && (

@@ -52,7 +52,7 @@ export default function Home() {
         .nav-a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:#1a1a1a;transition:width 0.2s}
         .nav-a:hover::after,.nav-a.active::after{width:100%}
         .nav-a.active{font-weight:700}
-        .btn-black{background:#1a1a1a;color:#fff;border:none;padding:14px 32px;font-size:14px;font-weight:700;letter-spacing:1px;cursor:pointer;font-family:'Nature', serif;transition:all 0.2s}
+        .btn-black{background:#1a1a1a;color:#fff;border:none;padding:14px 32px;font-size:14px;font-weight:700;letter-spacing:1px;cursor:pointer;font-family:'Gibed', serif;transition:all 0.2s}
         .btn-black:hover{background:#333;transform:translateY(-2px)}
         .svc-card{border-left:1px solid #c5c3be;padding:32px 28px;transition:all 0.3s}
         .svc-card:hover{background:rgba(255,255,255,0.5);transform:translateY(-4px)}
@@ -65,7 +65,7 @@ export default function Home() {
         .port-item:hover .port-label{opacity:1;transform:none}
         .blog-img{transition:transform 0.4s ease}
         .blog-card:hover .blog-img{transform:scale(1.05)}
-        .input-f{width:100%;padding:14px 16px;background:transparent;border:1px solid #b5b3ae;font-family:'Nature', serif;font-size:14px;color:#1a1a1a;outline:none;transition:border-color 0.2s}
+        .input-f{width:100%;padding:14px 16px;background:transparent;border:1px solid #b5b3ae;font-family:'Gibed', serif;font-size:14px;color:#1a1a1a;outline:none;transition:border-color 0.2s}
         .input-f:focus{border-color:#1a1a1a}
         .input-f::placeholder{color:#aaa}
         .social-side{position:fixed;left:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;z-index:50}

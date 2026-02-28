@@ -1,14 +1,7 @@
-/* Nature Font */
+/* Gibed Font */
 @font-face {
-  font-family: 'Nature';
-  src: url('/fonts/nature-regular.ttf') format('truetype');
+  font-family: 'Gibed';
+  src: url('/fonts/gibed.otf') format('opentype');
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Nature';
-  src: url('/fonts/nature-bold.ttf') format('truetype');
-  font-weight: 700;
   font-style: normal;
 }

@@ -27,7 +27,7 @@ export default function BlogDetail() {
     <div style={{ fontFamily: "'Nature', serif", background: "#e8e6e1", minHeight: "100vh" }}>
       <style>{`
         .prose{max-width:720px;margin:0 auto;line-height:1.8;color:#333}
-        .prose h1,.prose h2,.prose h3{font-family:'Nature', serif;color:#1a1a1a;margin:32px 0 16px}
+        .prose h1,.prose h2,.prose h3{font-family:'Gibed', serif;color:#1a1a1a;margin:32px 0 16px}
         .prose h1{font-size:36px}.prose h2{font-size:28px}.prose h3{font-size:22px}
         .prose p{margin-bottom:20px;font-size:16px}
         .prose ul,.prose ol{padding-left:24px;margin-bottom:20px}
