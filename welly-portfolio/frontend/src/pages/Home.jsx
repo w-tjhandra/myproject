@@ -46,8 +46,10 @@ export default function Home() {
       <style>{`
         @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
         @keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
-        html{scroll-behavior:smooth}
+        html{scroll-behavior:smooth;}
         ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#e8e6e1}::-webkit-scrollbar-thumb{background:#aaa;border-radius:3px}
+        * { box-sizing: border-box; }
+        body { width: 100vw; overflow-x: hidden; }
         .nav-a{cursor:pointer;transition:color 0.2s;position:relative;padding-bottom:4px;font-size:14px;}
         .nav-a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:#1a1a1a;transition:width 0.2s}
         .nav-a:hover::after,.nav-a.active::after{width:100%}
@@ -72,8 +74,47 @@ export default function Home() {
         .social-icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;transition:transform 0.2s;text-decoration:none;color:#1a1a1a}
         .social-icon:hover{transform:scale(1.2)}
         .follow-v{writing-mode:vertical-rl;font-size:11px;letter-spacing:2px;color:#888;margin-top:10px}
-        section{padding:100px 0}
-        .inner{max-width:1100px;margin:0 auto;padding:0 80px 0 100px}
+        section{padding:100px 0;width:100%;overflow-x:hidden}
+        .inner{width:100%;max-width:1100px;margin:0 auto;padding:0 40px}
+        
+        .hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
+        .skill-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:20px;justify-items:center}
+        .port-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:20px}
+        .blog-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:24px}
+        .resume-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+        .contact-form-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+        .contact-info{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;text-align:center}
+        
+        @media(max-width:1024px){
+          .inner{padding:0 32px}
+          .social-side{left:12px}
+          .skill-grid{grid-template-columns:repeat(2, 1fr)}
+          .port-grid{grid-template-columns:repeat(2, 1fr)}
+          .blog-grid{grid-template-columns:repeat(2, 1fr)}
+        }
+        
+        @media(max-width:768px){
+          .inner{padding:0 24px}
+          section{padding:60px 0}
+          .social-side{display:none}
+          .nav-a{font-size:12px}
+          .hero-grid{grid-template-columns:1fr;gap:32px}
+          .skill-grid{grid-template-columns:repeat(2, 1fr);gap:16px}
+          .port-grid{grid-template-columns:1fr}
+          .blog-grid{grid-template-columns:1fr}
+          .resume-grid{grid-template-columns:1fr;gap:40px}
+          .contact-form-grid{grid-template-columns:1fr}
+          .contact-info{grid-template-columns:1fr}
+        }
+        
+        @media(max-width:640px){
+          .inner{padding:0 16px}
+          section{padding:40px 0}
+          nav{padding:14px 16px !important}
+          .nav-a{font-size:11px;gap:12px !important}
+          .hero-grid{gap:24px;padding-top:60px}
+          .skill-grid{grid-template-columns:1fr;gap:12px}
+        }
       `}</style>
 
       {/* Social sidebar */}
@@ -95,7 +136,7 @@ export default function Home() {
 
       {/* ── HERO ── */}
       <section id="home" style={{ padding: 0, minHeight: "100vh", display: "flex", alignItems: "center", ...TEXTURE, backgroundSize: "300px", position: "relative" }}>
-        <div className="inner" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", gap: 40, paddingTop: 100, paddingBottom: 60, width: "100%" }}>
+        <div className="inner hero-grid" style={{ paddingTop: 100, paddingBottom: 60, width: "100%" }}>
           <div style={{ animation: "fadeDown 0.8s ease both" }}>
             <p style={{ fontSize: 12, letterSpacing: 4, color: "#888", textTransform: "uppercase", marginBottom: 20 }}>WELCOME TO MY WEBSITE</p>
             <h1 style={{ fontFamily: "'Nature', serif", fontSize: "clamp(36px, 4.5vw, 60px)", lineHeight: 1.1, fontWeight: 700, marginBottom: 16 }}>
@@ -114,8 +155,8 @@ export default function Home() {
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
             {profile.photo_url
-              ? <img src={profile.photo_url} alt={profile.name} style={{ width: "75%", maxWidth: 380, objectFit: "cover", filter: "grayscale(1)" }} />
-              : <div style={{ width: "70%", maxWidth: 360, aspectRatio: "3/4", background: "#c8c6c1", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 80, color: "#999" }}>👤</div>
+              ? <img src={profile.photo_url} alt={profile.name} style={{ width: "100%", maxWidth: 400, objectFit: "cover", filter: "grayscale(1)" }} />
+              : <div style={{ width: "100%", maxWidth: 400, aspectRatio: "3/4", background: "#c8c6c1", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 80, color: "#999" }}>👤</div>
             }
           </div>
         </div>
@@ -129,7 +170,7 @@ export default function Home() {
         <div className="inner">
           <SectionHeader title="About Me" />
           <Reveal><p style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 64px", fontSize: 15, lineHeight: 1.9, color: "#444" }}>{profile.bio}</p></Reveal>
-          <div ref={skillRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20, justifyItems: "center" }}>
+          <div ref={skillRef} className="skill-grid" style={{}}>
             {skills.map((s, i) => (
               <Reveal key={s.id} delay={i * 0.1}><CircleSkill name={s.name} pct={s.percentage} animate={skillVis} /></Reveal>
             ))}
@@ -156,7 +197,7 @@ export default function Home() {
       <section id="services" style={{ background: "#e8e6e1" }}>
         <div className="inner">
           <SectionHeader title="What I Do" />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0 }}>
+          <div className="port-grid" style={{}}>
             {services.map((s, i) => (
               <Reveal key={s.id} delay={i * 0.1}>
                 <div className="svc-card">
@@ -194,7 +235,7 @@ export default function Home() {
       <section id="resume" style={{ background: "#e8e6e1" }}>
         <div className="inner">
           <SectionHeader title="My Resume" />
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60 }}>
+          <div className="resume-grid" style={{}}>
             {[["Experiences", exp.experiences], ["Education", exp.education]].map(([title, items]) => (
               <div key={title}>
                 <Reveal><h3 style={{ fontWeight: 700, fontSize: 22, marginBottom: 32 }}>{title}</h3></Reveal>
@@ -249,7 +290,7 @@ export default function Home() {
           <SectionHeader title="Contact Me" />
           <div style={{ maxWidth: 800, margin: "0 auto" }}>
             <Reveal>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12, marginBottom: 12 }}>
+              <div className="contact-form-grid" style={{ marginBottom: 12 }}>
                 <input className="input-f" placeholder="Your Name" />
                 <input className="input-f" placeholder="Your Email" />
                 <input className="input-f" placeholder="Your Phone" />
@@ -258,7 +299,7 @@ export default function Home() {
               <div style={{ textAlign: "center" }}><button className="btn-black">Send Message</button></div>
             </Reveal>
             <Reveal delay={0.2}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20, marginTop: 60, textAlign: "center" }}>
+              <div className="contact-info" style={{ marginTop: 60 }}>
                 {[["Email Me", profile.email], ["Call Me", profile.phone], ["Location", profile.location]].map(([l, v]) => (
                   <div key={l}><p style={{ fontWeight: 700, marginBottom: 6 }}>{l}</p><p style={{ fontSize: 14, color: "#555" }}>{v}</p></div>
                 ))}
