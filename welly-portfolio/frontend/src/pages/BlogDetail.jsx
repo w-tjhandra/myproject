@@ -13,21 +13,21 @@ export default function BlogDetail() {
   }, [slug]);
 
   if (error) return (
-    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", fontFamily: "'Gibed', serif", background: "#e8e6e1" }}>
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", fontFamily: "'Nature', serif", background: "#e8e6e1" }}>
       <p style={{ fontSize: 20, color: "#888", marginBottom: 24 }}>Post tidak ditemukan.</p>
       <Link to="/" style={{ color: "#1a1a1a", fontWeight: 700 }}>← Kembali</Link>
     </div>
   );
 
   if (!blog) return (
-    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Gibed', serif", background: "#e8e6e1", color: "#888" }}>Loading...</div>
+    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Nature', serif", background: "#e8e6e1", color: "#888" }}>Loading...</div>
   );
 
   return (
-    <div style={{ fontFamily: "'Gibed', serif", background: "#e8e6e1", minHeight: "100vh" }}>
+    <div style={{ fontFamily: "'Nature', serif", background: "#e8e6e1", minHeight: "100vh" }}>
       <style>{`
         .prose{max-width:720px;margin:0 auto;line-height:1.8;color:#333}
-        .prose h1,.prose h2,.prose h3{font-family:'Gibed', serif;color:#1a1a1a;margin:32px 0 16px}
+        .prose h1,.prose h2,.prose h3{font-family:'Nature', serif;color:#1a1a1a;margin:32px 0 16px}
         .prose h1{font-size:36px}.prose h2{font-size:28px}.prose h3{font-size:22px}
         .prose p{margin-bottom:20px;font-size:16px}
         .prose ul,.prose ol{padding-left:24px;margin-bottom:20px}
@@ -41,7 +41,7 @@ export default function BlogDetail() {
       `}</style>
 
       <nav style={{ background: "#e8e6e1", padding: "18px 60px", borderBottom: "1px solid rgba(0,0,0,0.07)", display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, zIndex: 100 }}>
-        <span style={{ fontFamily: "'Gibed', serif", fontSize: 28, fontWeight: 700 }}>Welly</span>
+        <span style={{ fontFamily: "'Nature', serif", fontSize: 28, fontWeight: 700 }}>Welly</span>
         <Link to="/" style={{ fontSize: 14, color: "#1a1a1a", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>← Kembali</Link>
       </nav>
 
@@ -53,7 +53,7 @@ export default function BlogDetail() {
           <p style={{ fontSize: 13, color: "#888", marginBottom: 12 }}>
             {new Date(blog.created_at).toLocaleDateString("id-ID", { year: "numeric", month: "long", day: "numeric" })}
           </p>
-          <h1 style={{ fontFamily: "'Gibed', serif", fontSize: "clamp(28px, 4vw, 48px)", lineHeight: 1.2, marginBottom: 48, color: "#1a1a1a" }}>{blog.title}</h1>
+          <h1 style={{ fontFamily: "'Nature', serif", fontSize: "clamp(28px, 4vw, 48px)", lineHeight: 1.2, marginBottom: 48, color: "#1a1a1a" }}>{blog.title}</h1>
           <div className="prose">
             <ReactMarkdown>{blog.content}</ReactMarkdown>
           </div>

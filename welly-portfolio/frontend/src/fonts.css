@@ -1,7 +1,35 @@
-/* Gibed Font */
+/* Nature Font */
 @font-face {
-  font-family: 'Gibed';
-  src: url('/fonts/gibed.otf') format('opentype');
+  font-family: 'Nature';
+  src: url('/fonts/ZTNature-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nature';
+  src: url('/fonts/ZTNature-Regular.otf') format('opentype');
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nature';
+  src: url('/fonts/ZTNature-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nature';
+  src: url('/fonts/ZTNature-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nature';
+  src: url('/fonts/ZTNature-Black.otf') format('opentype');
+  font-weight: 900;
   font-style: normal;
 }
