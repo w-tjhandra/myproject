@@ -144,7 +144,7 @@ export default function Home() {
           <div className="inner">
             <Reveal>
               <div style={{ maxWidth: 820 }}>
-                <div style={{ fontFamily: "'Gibed', serif", fontSize: 80, lineHeight: 0.8, color: "#1a1a1a", marginBottom: 24 }}">"</div>
+                <div style={{ fontFamily: "'Gibed', serif", fontSize: 80, lineHeight: 0.8, color: "#1a1a1a", marginBottom: 24 }}>{"\""}}</div>
                 <p style={{ fontFamily: "'Gibed', serif", fontSize: "clamp(18px, 2.2vw, 26px)", lineHeight: 1.7, color: "#1a1a1a", marginBottom: 24 }}>{profile.quote}</p>
                 <div style={{ borderLeft: "3px solid #555", paddingLeft: 12 }}><span style={{ fontSize: 13, color: "#555" }}>{profile.quote_author}</span></div>
               </div>
