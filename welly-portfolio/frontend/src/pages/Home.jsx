@@ -29,7 +29,7 @@ export default function Home() {
     return () => obs.disconnect();
   }, [data]);
 
-  if (!data) return <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Nature', serif", background: "#e8e6e1", fontSize: 16, color: "#888" }}>Loading...</div>;
+  if (!data) return <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Gibed', serif", background: "#e8e6e1", fontSize: 16, color: "#888" }}>Loading...</div>;
 
   const { profile, skills, services } = data;
   const titles = profile.tagline?.split("/").map(t => t.trim()).filter(Boolean) || ["Network Engineer", "ICT Trainer"];
@@ -42,7 +42,7 @@ export default function Home() {
   };
 
   return (
-    <div style={{ fontFamily: "'Nature', serif", background: "#e8e6e1", color: "#1a1a1a" }}>
+    <div style={{ fontFamily: "'Gibed', serif", background: "#e8e6e1", color: "#1a1a1a" }}>
       <style>{`
         @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
         @keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
@@ -86,7 +86,7 @@ export default function Home() {
 
       {/* Navbar */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: "#e8e6e1", padding: "18px 60px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(0,0,0,0.07)" }}>
-        <span style={{ fontFamily: "'Nature', serif", fontSize: 30, fontWeight: 700 }}>{profile.name?.split(" ")[0]}</span>
+        <span style={{ fontFamily: "'Gibed', serif", fontSize: 30, fontWeight: 700 }}>{profile.name?.split(" ")[0]}</span>
         <div style={{ display: "flex", gap: 28 }}>
           {NAV.map((item, i) => (
             <span key={item} className={`nav-a ${activeNav === NAV_IDS[i] ? "active" : ""}`} onClick={() => scrollTo(NAV_IDS[i])}>{item}</span>
@@ -99,7 +99,7 @@ export default function Home() {
         <div className="inner" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", gap: 40, paddingTop: 100, paddingBottom: 60, width: "100%" }}>
           <div style={{ animation: "fadeDown 0.8s ease both" }}>
             <p style={{ fontSize: 12, letterSpacing: 4, color: "#888", textTransform: "uppercase", marginBottom: 20 }}>WELCOME TO MY WEBSITE</p>
-            <h1 style={{ fontFamily: "'Nature', serif", fontSize: "clamp(36px, 4.5vw, 60px)", lineHeight: 1.1, fontWeight: 700, marginBottom: 16 }}>
+            <h1 style={{ fontFamily: "'Gibed', serif", fontSize: "clamp(36px, 4.5vw, 60px)", lineHeight: 1.1, fontWeight: 700, marginBottom: 16 }}>
               Hi, I'm {profile.name}<br />
               <span style={{ fontSize: "clamp(28px, 3.5vw, 48px)" }}>a <TypingTitle titles={titles} /></span>
             </h1>
@@ -144,8 +144,8 @@ export default function Home() {
           <div className="inner">
             <Reveal>
               <div style={{ maxWidth: 820 }}>
-                <div style={{ fontFamily: "'Nature', serif", fontSize: 80, lineHeight: 0.8, color: "#1a1a1a", marginBottom: 24 }}>"</div>
-                <p style={{ fontFamily: "'Nature', serif", fontSize: "clamp(18px, 2.2vw, 26px)", lineHeight: 1.7, color: "#1a1a1a", marginBottom: 24 }}>{profile.quote}</p>
+                <div style={{ fontFamily: "'Gibed', serif", fontSize: 80, lineHeight: 0.8, color: "#1a1a1a", marginBottom: 24 }}">"</div>
+                <p style={{ fontFamily: "'Gibed', serif", fontSize: "clamp(18px, 2.2vw, 26px)", lineHeight: 1.7, color: "#1a1a1a", marginBottom: 24 }}>{profile.quote}</p>
                 <div style={{ borderLeft: "3px solid #555", paddingLeft: 12 }}><span style={{ fontSize: 13, color: "#555" }}>{profile.quote_author}</span></div>
               </div>
             </Reveal>

@@ -272,7 +272,7 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div style={{ fontFamily: "'Nature', serif", background: "#f5f5f5", minHeight: "100vh" }}>
+    <div style={{ fontFamily: "'Gibed', serif", background: "#f5f5f5", minHeight: "100vh" }}>
       <style>{`button{font-family:'Gibed', serif}`}</style>
 
       {/* Toast */}
@@ -285,7 +285,7 @@ export default function AdminDashboard() {
       {/* Sidebar */}
       <div style={{ position: "fixed", left: 0, top: 0, bottom: 0, width: 220, background: "#1a1a1a", color: "#fff", display: "flex", flexDirection: "column", zIndex: 100 }}>
         <div style={{ padding: "28px 24px 20px" }}>
-          <span style={{ fontFamily: "'Nature', serif", fontSize: 28, fontWeight: 700 }}>Welly</span>
+          <span style={{ fontFamily: "'Gibed', serif", fontSize: 28, fontWeight: 700 }}>Welly</span>
           <p style={{ fontSize: 12, color: "#666", marginTop: 4 }}>Admin Panel</p>
         </div>
         <nav style={{ flex: 1, padding: "0 12px" }}>
