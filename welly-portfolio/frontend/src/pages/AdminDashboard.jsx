@@ -374,24 +374,6 @@ function PortfolioModal({ data, onSave }) {
   );
 }
 
-function ImageUploader({ value, onChange }) {
-  const [uploading, setUploading] = useState(false);
-  const handleFile = async (e) => {
-    const file = e.target.files[0]; if (!file) return;
-    setUploading(true);
-    try { const res = await api.upload(file); onChange(res.url); } catch (err) { alert("Upload gagal: " + err.message); }
-    finally { setUploading(false); }
-  };
-  return (
-    <div>
-      <input style={{ ...inputStyle, marginBottom: 8 }} value={value || ""} onChange={e => onChange(e.target.value)} placeholder="URL gambar atau upload di bawah" />
-      <label style={{ display: "inline-block", cursor: "pointer", fontSize: 13, color: "#555", padding: "8px 14px", border: "1px dashed #ccc", borderRadius: 4 }}>
-        {uploading ? "Uploading..." : "📁 Upload gambar"}<input type="file" accept="image/*" onChange={handleFile} style={{ display: "none" }} />
-      </label>
-      {value && <img src={value} alt="" style={{ display: "block", marginTop: 10, maxHeight: 100, maxWidth: "100%", borderRadius: 4, objectFit: "cover" }} />}
-    </div>
-  );
-}
 
 // ── Blog modal with markdown editor ──────────────────────────────────────
 function BlogModal({ data, onSave }) {
@@ -430,25 +412,3 @@ function BlogModal({ data, onSave }) {
 }
 
 /* Attach Modal to window scope for GenericModal use */
-function Modal({ title, onClose, children }) {
-  return (
-    <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", padding: 20, overflowY: "auto" }}>
-      <div style={{ background: "#fff", borderRadius: 8, padding: 32, width: "100%", maxWidth: 620, maxHeight: "90vh", overflowY: "auto", position: "relative", margin: "auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
-          <h3 style={{ fontSize: 20, fontWeight: 700 }}>{title}</h3>
-          <button onClick={onClose} style={{ background: "none", border: "none", fontSize: 22, cursor: "pointer", color: "#999" }}>✕</button>
-        </div>
-        {children}
-      </div>
-    </div>
-  );
-}
-
-function Field({ label, children }) {
-  return (
-    <div style={{ marginBottom: 16 }}>
-      <label style={{ display: "block", fontSize: 13, fontWeight: 600, marginBottom: 6, color: "#444" }}>{label}</label>
-      {children}
-    </div>
-  );
-}

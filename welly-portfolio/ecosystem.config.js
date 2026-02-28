@@ -3,7 +3,7 @@ module.exports = {
     {
       name: "welly-backend",
       script: "./backend/server.js",
-      cwd: "/var/www/welly-portfolio",
+      cwd: "/www/wwwroot/cwell.my.id/myproject/welly-portfolio",
       env: {
         NODE_ENV: "production",
         PORT: 4000,
