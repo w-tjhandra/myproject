@@ -94,26 +94,34 @@ export default function Home() {
         }
         
         @media(max-width:768px){
-          .inner{padding:0 24px}
-          section{padding:60px 0}
+          .inner{padding:0 20px}
+          section{padding:40px 0}
           .social-side{display:none}
-          .nav-a{font-size:12px}
-          .hero-grid{grid-template-columns:1fr;gap:32px}
-          .skill-grid{grid-template-columns:repeat(2, 1fr);gap:16px}
+          .nav-a{font-size:11px;padding:4px 6px}
+          .hero-grid{grid-template-columns:1fr;gap:20px}
+          .skill-grid{grid-template-columns:repeat(2, 1fr);gap:12px}
           .port-grid{grid-template-columns:1fr}
           .blog-grid{grid-template-columns:1fr}
-          .resume-grid{grid-template-columns:1fr;gap:40px}
+          .resume-grid{grid-template-columns:1fr;gap:24px}
           .contact-form-grid{grid-template-columns:1fr}
-          .contact-info{grid-template-columns:1fr}
+          .contact-info{grid-template-columns:1fr;gap:12px}
+          .btn-black{padding:10px 24px;font-size:13px}
+          .svc-card{padding:20px 16px}
         }
         
         @media(max-width:640px){
-          .inner{padding:0 16px}
-          section{padding:40px 0}
-          nav{padding:14px 16px !important}
-          .nav-a{font-size:11px;gap:12px !important}
-          .hero-grid{gap:24px;padding-top:60px}
-          .skill-grid{grid-template-columns:1fr;gap:12px}
+          .inner{padding:0 14px}
+          section{padding:30px 0}
+          nav{padding:12px 14px !important}
+          .nav-a{font-size:10px;gap:8px !important;padding:2px 4px}
+          .hero-grid{gap:16px;padding-top:40px !important;padding-bottom:30px !important}
+          .skill-grid{grid-template-columns:1fr;gap:10px}
+          .btn-black{padding:8px 20px;font-size:12px}
+          .svc-card{padding:16px 12px;border-left-width:2px}
+          .input-f{padding:10px 12px;font-size:13px}
+          h1{font-size:24px !important}
+          h2{font-size:20px !important}
+          h3{font-size:16px !important}
         }
       `}</style>
 
@@ -126,8 +134,8 @@ export default function Home() {
       </div>
 
       {/* Navbar */}
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: "#e8e6e1", padding: "18px 60px", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid rgba(0,0,0,0.07)" }}>
-        <div style={{ display: "flex", gap: 28 }}>
+      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: "#e8e6e1", padding: "clamp(8px, 3vw, 18px) clamp(12px, 4vw, 60px)", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid rgba(0,0,0,0.07)" }}>
+        <div style={{ display: "flex", gap: "clamp(8px, 3vw, 28px)", flexWrap: "wrap", justifyContent: "center" }}>
           {NAV.map((item, i) => (
             <span key={item} className={`nav-a ${activeNav === NAV_IDS[i] ? "active" : ""}`} onClick={() => scrollTo(NAV_IDS[i])}>{item}</span>
           ))}
@@ -136,27 +144,27 @@ export default function Home() {
 
       {/* ── HERO ── */}
       <section id="home" style={{ padding: 0, minHeight: "100vh", display: "flex", alignItems: "center", ...TEXTURE, backgroundSize: "300px", position: "relative" }}>
-        <div className="inner hero-grid" style={{ paddingTop: 100, paddingBottom: 60, width: "100%" }}>
+        <div className="inner hero-grid" style={{ paddingTop: "clamp(60px, 10vw, 100px)", paddingBottom: "clamp(30px, 5vw, 60px)", width: "100%" }}>
           <div style={{ animation: "fadeDown 0.8s ease both" }}>
-            <p style={{ fontSize: 12, letterSpacing: 4, color: "#888", textTransform: "uppercase", marginBottom: 20 }}>WELCOME TO MY WEBSITE</p>
-            <h1 style={{ fontFamily: "'Nature', serif", fontSize: "clamp(36px, 4.5vw, 60px)", lineHeight: 1.1, fontWeight: 700, marginBottom: 16 }}>
+            <p style={{ fontSize: "clamp(9px, 2.5vw, 12px)", letterSpacing: 4, color: "#888", textTransform: "uppercase", marginBottom: "clamp(12px, 3vw, 20px)" }}>WELCOME TO MY WEBSITE</p>
+            <h1 style={{ fontFamily: "'Nature', serif", fontSize: "clamp(24px, 5vw, 60px)", lineHeight: 1.1, fontWeight: 700, marginBottom: "clamp(10px, 2vw, 16px)" }}>
               Hi, I'm {profile.name}<br />
-              <span style={{ fontSize: "clamp(28px, 3.5vw, 48px)" }}>a <TypingTitle titles={titles} /></span>
+              <span style={{ fontSize: "clamp(18px, 4vw, 48px)" }}>a <TypingTitle titles={titles} /></span>
             </h1>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", margin: "32px 0 36px", borderLeft: "1px solid #bbb" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", margin: "clamp(16px, 4vw, 32px) 0 clamp(16px, 4vw, 36px)", borderLeft: "1px solid #bbb" }}>
               {[["Surabaya", "East Java"], ["MikroTik", "MTCNA Certified"], ["100+", "Classes Taught"]].map(([a, b], i) => (
-                <div key={i} style={{ borderLeft: i > 0 ? "1px solid #bbb" : "none", padding: "8px 16px" }}>
-                  <div style={{ fontWeight: 700, fontSize: 14 }}>{a}</div>
-                  <div style={{ fontSize: 12, color: "#666", marginTop: 2 }}>{b}</div>
+                <div key={i} style={{ borderLeft: i > 0 ? "1px solid #bbb" : "none", padding: "clamp(6px, 1.5vw, 8px) clamp(10px, 2vw, 16px)" }}>
+                  <div style={{ fontWeight: 700, fontSize: "clamp(11px, 2vw, 14px)" }}>{a}</div>
+                  <div style={{ fontSize: "clamp(9px, 1.8vw, 12px)", color: "#666", marginTop: 2 }}>{b}</div>
                 </div>
               ))}
             </div>
             <button className="btn-black" onClick={() => scrollTo("resume")}>My Resume</button>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
             {profile.photo_url
-              ? <img src={profile.photo_url} alt={profile.name} style={{ width: "100%", maxWidth: 400, objectFit: "cover", filter: "grayscale(1)" }} />
-              : <div style={{ width: "100%", maxWidth: 400, aspectRatio: "3/4", background: "#c8c6c1", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 80, color: "#999" }}>👤</div>
+              ? <img src={profile.photo_url} alt={profile.name} style={{ width: "100%", height: "auto", maxWidth: "clamp(200px, 80vw, 400px)", aspectRatio: "3/4", objectFit: "cover", filter: "grayscale(1)", borderRadius: "4px" }} />
+              : <div style={{ width: "clamp(150px, 60vw, 400px)", aspectRatio: "3/4", background: "#c8c6c1", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "clamp(40px, 10vw, 80px)", color: "#999", borderRadius: "4px" }}>👤</div>
             }
           </div>
         </div>
