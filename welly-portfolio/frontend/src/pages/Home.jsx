@@ -127,9 +127,9 @@ export default function Home() {
 
       {/* Social sidebar */}
       <div className="social-side">
-        <a className="social-icon" href="#">f</a>
-        <a className="social-icon" href="#">𝕏</a>
-        <a className="social-icon" href="#">◉</a>
+        <a className="social-icon" href="https://instagram.com/chandrawelly_" target="_blank" rel="noopener noreferrer">📷</a>
+        <a className="social-icon" href="https://facebook.com/tjhandra" target="_blank" rel="noopener noreferrer">f</a>
+        <a className="social-icon" href="https://linkedin.com/in/welly-chandra-mauliate-sitorus-919243316" target="_blank" rel="noopener noreferrer">in</a>
         <span className="follow-v">Follow Me</span>
       </div>
 
@@ -152,7 +152,7 @@ export default function Home() {
               <span style={{ fontSize: "clamp(18px, 4vw, 48px)" }}>a <TypingTitle titles={titles} /></span>
             </h1>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", margin: "clamp(16px, 4vw, 32px) 0 clamp(16px, 4vw, 36px)", borderLeft: "1px solid #bbb" }}>
-              {[["Surabaya", "East Java"], ["MikroTik", "MTCNA Certified"], ["100+", "Classes Taught"]].map(([a, b], i) => (
+              {[["Surabaya", "East Java"], ["MikroTik", "MikroTik Certified Trainer"], ["100+", "Classes Taught"]].map(([a, b], i) => (
                 <div key={i} style={{ borderLeft: i > 0 ? "1px solid #bbb" : "none", padding: "clamp(6px, 1.5vw, 8px) clamp(10px, 2vw, 16px)" }}>
                   <div style={{ fontWeight: 700, fontSize: "clamp(11px, 2vw, 14px)" }}>{a}</div>
                   <div style={{ fontSize: "clamp(9px, 1.8vw, 12px)", color: "#666", marginTop: 2 }}>{b}</div>
@@ -228,8 +228,8 @@ export default function Home() {
               <Reveal key={item.id} delay={i * 0.07}>
                 <div className="port-item">
                   {item.image_url
-                    ? <img src={item.image_url} alt={item.title} className="port-img" style={{ width: "100%", height: i % 3 === 0 ? 380 : 260, objectFit: "cover", display: "block", filter: "grayscale(1)" }} />
-                    : <div className="port-img" style={{ height: i % 3 === 0 ? 380 : 260, background: `hsl(${200 + i * 20}, 8%, ${52 + (i % 3) * 6}%)`, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 13, letterSpacing: 1 }}>{item.title}</div>
+                    ? <img src={item.image_url} alt={item.title} className="port-img" style={{ width: "100%", height: 320, objectFit: "cover", display: "block", filter: "grayscale(1)" }} />
+                    : <div className="port-img" style={{ height: 320, background: `hsl(${200 + i * 20}, 8%, ${52 + (i % 3) * 6}%)`, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 13, letterSpacing: 1 }}>{item.title}</div>
                   }
                   <div className="port-overlay"><span className="port-label">{item.title}</span></div>
                 </div>
@@ -308,7 +308,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.2}>
               <div className="contact-info" style={{ marginTop: 60 }}>
-                {[["Email Me", profile.email], ["Call Me", profile.phone], ["Location", profile.location]].map(([l, v]) => (
+                {[["Email Me", profile.email], ["Location", profile.location]].map(([l, v]) => (
                   <div key={l}><p style={{ fontWeight: 700, marginBottom: 6 }}>{l}</p><p style={{ fontSize: 14, color: "#555" }}>{v}</p></div>
                 ))}
               </div>
