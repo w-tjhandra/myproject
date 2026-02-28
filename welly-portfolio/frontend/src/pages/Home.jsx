@@ -85,8 +85,7 @@ export default function Home() {
       </div>
 
       {/* Navbar */}
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: "#e8e6e1", padding: "18px 60px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(0,0,0,0.07)" }}>
-        <span style={{ fontFamily: "'Nature', serif", fontSize: 30, fontWeight: 700 }}>{profile.name?.split(" ")[0]}</span>
+      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: "#e8e6e1", padding: "18px 60px", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid rgba(0,0,0,0.07)" }}>
         <div style={{ display: "flex", gap: 28 }}>
           {NAV.map((item, i) => (
             <span key={item} className={`nav-a ${activeNav === NAV_IDS[i] ? "active" : ""}`} onClick={() => scrollTo(NAV_IDS[i])}>{item}</span>
